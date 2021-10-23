@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    font-family: 'Arial' , sans-serif ;
+}
+nav{
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+nav .mainMenu{
+    display: flex;
+    list-style: none ;
+}
+nav .mainMenu li a {
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+    top: 25px;
+}
+nav .mainMenu li a:hover {
+    color: #919056;
+}
+.mainMenu li a::after{
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #919056;
+    transition:width .3;
+}
+.mainMenu li a:hover::after{
+    width: 100%;
+    transition:width .3s ;
+}
+nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+nav .mainMenu .closeMenu {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+.fa-facebook:hover {color: #919056; }
+.fa-instagram:hover {color: #919056;}
+
+nav .logo {
+    position: relative;
+    margin: 5px;
+    width: 100px;
+    left: 30px;
+    cursor: pointer;
+}
+
+nav a i{
+    position: relative;
+    top: 40px;
+    font-size: 35px;
+    width: 50px;
+    color: white;
+}
+
+
+@media(max-width: 800px ){
+    nav .mainMenu{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        transition: top 1s ease;
+        display: none;
+    }
+    nav .mainMenu .closeMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+    }
+    nav .openMenu {
+        display: block;
+    }
+    nav .mainMenu li a:hover {
+        background: none;
+        color: #919056;
+        font-size: 1.6rem;
+    }
+    .icons i {
+        position: relative;
+        display: inline-block;
+        padding: 12px;
+        top: 100px;
+    }
+}
+
+
+footer{
+    position: absolute;
+    background-color: #000;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
